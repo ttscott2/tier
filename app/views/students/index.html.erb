@@ -1,1 +1,20 @@
 <h1>All Students</h1>
+
+
+<% @students.each do |student| %>
+
+  <table>
+  <tr>
+    <th>First Name:</th>
+    <td><%= student.first_name %></td>
+  </tr>
+  <tr>
+    <th>Last Name:</th>
+    <td><%= student.last_name %></td>
+  </tr>
+    
+  </table>
+   
+<% end %>
+
+<%= link_to 'Add Student', new_student_path %>

@@ -1,0 +1,12 @@
+<h1>Editing <%= @student.full_name %></h1>
+
+<%= simple_form_for @student do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :grade %>
+  <%= f.input :current_avg %>
+  <%= f.button :submit %>
+  <% end %>
+
+
+<%= link_to 'Home', root_path %>
