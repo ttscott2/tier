@@ -10,8 +10,11 @@ class StudentsController < ApplicationController
   
   def create
     @student = Student.new(student_params)
-    @student.save
-    redirect_to @student
+    if @student.save
+      redirect_to @student
+    else
+      render :new
+    end
   end
   
   def show
@@ -24,14 +27,19 @@ class StudentsController < ApplicationController
   
   def update
     @student = Student.find(params[:id])
-    @student.update(student_params)
-    redirect_to @student
+    if @student.update(student_params)
+      redirect_to @student
+    else
+      render :edit
+    end
   end
-end
+
 
 
 private
 
 def student_params
   params.require(:student).permit(:first_name, :last_name, :grade, :current_avg)
+end
+
 end
