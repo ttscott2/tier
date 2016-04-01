@@ -1,6 +1,8 @@
 <h1>Student</h1>
 
 <h2><%= @student.full_name %></h2>
+<h3>Grade: <%= @student.grade %></h3>
+<h3>Current Average: <%= @student.current_avg %></h3>
 
 <%= link_to 'Home', root_path %>
 <%= link_to 'Edit Student', edit_student_path %>

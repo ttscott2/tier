@@ -1,20 +1,27 @@
 <h1>All Students</h1>
 
 
-<% @students.each do |student| %>
 
-  <table>
+
+<table>
   <tr>
-    <th>First Name:</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Grade</th>
+    <th></th>
+  </tr>
+  <% @students.each do |student| %>
+  <tr>
     <td><%= student.first_name %></td>
-  </tr>
-  <tr>
-    <th>Last Name:</th>
     <td><%= student.last_name %></td>
+    <td><%= student.grade %></td>
+    <td>
+      <button><%= link_to 'View', student %></button>
+    </td>
   </tr>
-    
-  </table>
-   
-<% end %>
+  <% end %>
+</table>
 
+<button>
 <%= link_to 'Add Student', new_student_path %>
+</button>
