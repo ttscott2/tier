@@ -3,8 +3,8 @@
 <%= simple_form_for @student do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
-  <%= f.input :grade %>
-  <%= f.input :current_avg %>
+  <%= f.input :grade, collection: 6..12 %> 
+  <%= f.input :current_avg, collection: 0..100 %>
   <%= f.button :submit %>
   <% end %>
 
