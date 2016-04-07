@@ -5,7 +5,7 @@
   <%= f.input :last_name %>
   <%= f.input :grade, collection: 6..12 %> 
   <%= f.input :current_avg, collection: 0..100 %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn-success" %>
   <% end %>
 
 <% if @student.errors.any? %>
